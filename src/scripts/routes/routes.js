@@ -3,12 +3,14 @@ import AddStory from '../view/AddStoryView.js';
 import NotFound from '../view/NotFoundView.js';
 import Login from '../view/LoginView.js';
 import Register from '../view/RegisterView.js';
+import Saved from '../view/SavedStoryView.js';
 
 const routes = {
   '/': Home,
   '/add': AddStory,
   '/login': Login,
   '/register': Register,
+  '/saved': Saved,
 };
 
 const router = async () => {

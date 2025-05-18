@@ -1,8 +1,9 @@
 import '../styles/styles.css';
 import 'leaflet/dist/leaflet.css';
 import router from './routes/routes.js';
+import pushSubscribe from './utils/notification.js';
 
-// Fungsi untuk update navbar sesuai status login
+
 export function updateNavbar() {
   const token = localStorage.getItem('token');
 
@@ -25,8 +26,8 @@ export function updateNavbar() {
       e.preventDefault();
       localStorage.removeItem('token');
       alert('Berhasil logout!');
-      updateNavbar(); // Update tampilan navbar
-      location.hash = '/login'; // Arahkan ke halaman login
+      updateNavbar(); 
+      location.hash = '/login'; 
     });
   }
 }
@@ -40,10 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (skipLink && mainContent) {
     skipLink.addEventListener('click', (event) => {
-      event.preventDefault(); // Hindari reload
-      skipLink.blur();        // Lepas fokus dari skip link
-      mainContent.focus();    // Fokus ke elemen utama
-      mainContent.scrollIntoView({ behavior: 'smooth' }); // Scroll halus
+      event.preventDefault();
+      skipLink.blur();
+      mainContent.focus();    
+      mainContent.scrollIntoView({ behavior: 'smooth' }); 
     });
   }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateNavbar();
+  router();
+
+  
+  pushSubscribe();
 });
