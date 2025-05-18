@@ -1,0 +1,31 @@
+{
+  "name": "Story App",
+  "short_name": "StoryApp",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "description": "testing aplikasi PWA",
+  "background_color": "#ffffff",
+  "theme_color": "#42a5f5",
+  "screenshots": [
+  {
+     "src": "images/screenshot/add-story-page.png",
+    "sizes": "1920x1080",
+    "type": "image/jpg",
+    "form_factor": "wide"
+  },
+  {
+     "src": "images/screenshot/login-page.png",
+    "sizes": "1920x1080",
+    "type": "image/jpg",
+    "form_factor": "narrow"
+  }
+],
+  "icons": [
+    {
+      "src": "add-x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
